@@ -1,0 +1,6 @@
+@import './constants.scss';
+
+.counter{
+  @include flex(center, start, row, stretch);
+  margin: 0 10px;
+}

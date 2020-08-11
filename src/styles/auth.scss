@@ -1,0 +1,84 @@
+.auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #eff2f5;
+}
+
+
+
+.auth__form {
+  position: relative;
+  font-family: 'Nunito', sans-serif;
+  display: flex;
+  // align-items: space-between;
+  // width: 40vh;
+  // height: 40vw;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 40px;
+  .errMessage{
+    position: absolute;
+    top: -30px;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    color: #bf360c;
+  }
+  .inputLabel{
+    margin-left: 30px;
+    color: #808080;
+  }
+  .input__login {
+    margin: 10px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.125rem;
+    padding-left: 10px;
+    height: 40px;
+    border: 0.5px solid #ced4da;
+    border-radius: 5px;
+    align-self: stretch;
+  }
+  .input__password {
+    margin: 10px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.125rem;
+    padding-left: 10px;
+    height: 40px;
+    border: 0.5px solid #ced4da;
+    border-radius: 5px;
+    align-self: stretch;
+  }
+  .input__auth__checkbox {
+    margin: 0;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #9c27b0;
+    &:checked{
+      background-color: #9c27b0;
+    }
+  }
+  .auth__button {
+    margin: 10px;
+    padding: 12px 20px;
+    border-radius: 3px;
+    border: none;
+    background-color: #9c27b0;
+    align-self: stretch;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+  }
+}
+
+

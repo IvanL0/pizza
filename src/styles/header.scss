@@ -1,0 +1,10 @@
+.header{
+  display: flex;
+  flex-direction: row;
+  align-self: stretch;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 4vh;
+  padding: 10px;
+  background-color: rgba(254, 231, 209, 0.3);
+}

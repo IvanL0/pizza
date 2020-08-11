@@ -1,0 +1,51 @@
+@import './auth.scss';
+@import './menu.scss';
+@import './main.scss';
+@import './header.scss';
+@import './appBar.scss';
+@import './avatar.scss';
+@import './modal.scss';
+@import './card.scss';
+@import './counter.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+input:focus, 
+li,
+textarea:focus, 
+select:focus{
+  outline: none;
+}
+
+ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+p{
+  margin: 0;
+}
+
+body {
+  display: flex;
+  height: -webkit-fill-available;
+  font-family: 'Nunito', sans-serif !important;
+}
+
+#root {
+  width: 100%;
+  // height: fit-content;
+  display: flex;
+  flex-direction: row;
+}
+
+.container{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // align-self: stretch;
+}

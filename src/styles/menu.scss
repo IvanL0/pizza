@@ -1,0 +1,42 @@
+.menu{
+  background-color: #4a148c;
+  width: 20vh;
+  .menuHeader{
+    height: 7vh;
+  }
+  display: flex;
+  flex-direction: column;
+  .menuRow{
+    padding: 10px;
+    &:hover{
+      background-color: #2f0d58;
+      cursor: pointer;
+      transition: 50ms;
+    }
+  }
+  .menuCountRow{
+    display: flex;
+    flex-direction: row;
+  }
+  .menuDropdownRow{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    align-self: stretch;
+  }
+  .menuRowText{
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    color: #fff;
+    p{
+      margin-left: 10px;
+    }
+  }
+  .menuRowCount{
+    font-size: 14px;
+    color: #ccc;
+    margin-left: 10px;
+  }
+}

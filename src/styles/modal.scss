@@ -1,0 +1,84 @@
+.modal{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  .errorText{
+    font-size: 12px;
+    color: #bf360c;
+  }
+  .modalForm{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    .modalFormHeader{
+      font-size: 20px;
+    }
+    .modalFormBody{
+      align-self: stretch;
+      margin-top: 20px;
+      .modalFormBodyRow{
+        margin: 5px 0;
+        p{
+          margin: 5px 0;
+        }
+        input{
+          width: 100%;
+          font-size: 16px;
+          padding: 5px;
+          border: 0.5px solid #ccc;
+          border-radius: 5px;
+        }
+        .react-datepicker-wrapper{
+          width: 100%;
+        }
+      } 
+    }
+    .modalFormFooter{
+      display: flex;
+      flex-direction: row;
+      margin-top: 20px;
+      .buttonCancel{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        margin-left: 10px;
+        border: 0.5px solid #bf360c;
+        color: #bf360c;
+        padding: 5px 7px;
+        border-radius: 5px;
+        cursor: pointer;
+        &:hover{
+         background-color: #f8f8f8;
+         transition: 100ms;
+        }
+      }
+      .buttonConfirm{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        background-color: #689f38;
+        padding: 5px 7px;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        &:hover{
+          background-color: #33691e;
+          transition: 100ms;
+         }
+      }
+    }
+  }
+}

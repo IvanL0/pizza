@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { createBrowserHistory } from 'history'
 
-function App() {
+import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
+
+import Main from './components/Main'
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
+
+library.add(fab, faCheckSquare, faCoffee)
+
+export const history = createBrowserHistory()
+
+export default function App(){
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router history={history}>
+      <div style={{display: 'flex', flexDirection: 'row', width: '100%'}}>
+        {/* <Menu/> */}
+        <Routes/>
+      </div>
+    </Router>
+  )
 }
 
-export default App;
+const Routes = () => {
+  return(
+    <Switch>
+      <Route exact path="/" component={Main} />
+    </Switch>
+  )
+}

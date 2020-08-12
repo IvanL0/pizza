@@ -303,7 +303,7 @@ function Main(props){
               <Card 
                 key={i}
                 hoverable  
-                cover={<img src='/images/images.jpeg'/>}
+                cover={<img src='/pizza/images/images.jpeg'/>}
                 actions={[
                   <Button type='primary' onClick={() => props.addToCart(item)}>Order</Button>,
                 ]}

@@ -27,7 +27,7 @@ export default function App(){
 const Routes = () => {
   return(
     <Switch>
-      <Route exact path="/" component={Main} />
+      <Route exact path="/pizza" component={Main} />
     </Switch>
   )
 }

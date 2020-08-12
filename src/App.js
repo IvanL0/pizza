@@ -4,6 +4,7 @@ import { createBrowserHistory } from 'history'
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
 
 import Main from './components/Main'
+import Cart from './components/Cart'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
@@ -28,6 +29,7 @@ const Routes = () => {
   return(
     <Switch>
       <Route exact path="/pizza" component={Main} />
+      <Route path="/cart" component={Cart} /> 
     </Switch>
   )
 }

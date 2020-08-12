@@ -114,28 +114,27 @@ function Main(props){
               onChange={() => setState({...state, currency: !currency})}
             />
           </div>
-          
           {
             shopCart.items.map((item, i) => (
               <div 
                 key={i} 
                 className='shopCart'
               >
-                <div style={{flex: 1}}>{item.title}</div>
+                <Typography style={{flex: 1, marginTop: '3px'}}>{item.title}</Typography>
                 <div className='counter'>
                   <Button 
                     type='text' 
-                    icon={<MinusOutlined style={{fontSize: '12px', color: '#808080'}}/>} 
+                    icon={<MinusOutlined style={{fontSize: '14px', color: '#808080'}}/>} 
                     onClick={() => item.count >= 2 ? props.updatePizzaCount({id: item.id, count: -1}) : false}
                   />
                   <Typography style={{fontSize: '16px', color: '#03a9f4'}}>{item.count}</Typography>
                   <Button 
                     type='text' 
-                    icon={<PlusOutlined style={{fontSize: '12px', color: '#808080'}}/>} 
+                    icon={<PlusOutlined style={{fontSize: '14px', color: '#808080'}}/>} 
                     onClick={() => props.updatePizzaCount({id: item.id, count: 1})}
                   />
                 </div>
-                <Typography style={{fontWeight: 600}}>{!currency ? (item.price).toFixed(2) : (item.price*1.18).toFixed(2)}</Typography>
+                <Typography style={{fontWeight: 600, marginTop: '3px'}}>{!currency ? (item.price).toFixed(2) : (item.price*1.18).toFixed(2)}</Typography>
                 <Button 
                   type='text' 
                   icon={<DeleteOutlined />} 
@@ -156,7 +155,8 @@ function Main(props){
         </div>
         <Button 
           style={{marginTop: '10px', backgroundColor: '#4caf50', color: '#fff'}}
-          onClick={() => Object.keys(props.user).length > 0 ? createOrder() : setState({...state, isVisibleOrderModal: true})}
+          onClick={() => goTo('cart')}
+          // onClick={() => Object.keys(props.user).length > 0 ? createOrder() : setState({...state, isVisibleOrderModal: true})}
         >Checkout</Button>
       </div> :
       <Typography>Cart is empty</Typography>
@@ -176,6 +176,10 @@ function Main(props){
     props.createUser({name: name, address: address, phone: phone})
     setState({...state, isUserCreate: true, isOpenCreateUserModal: false})
   }
+
+  const goTo = (path) => {
+    props.history.push(path)
+  }
   
   return(
     <Layout className='main'>
@@ -192,13 +196,13 @@ function Main(props){
           props.user.order ?
             <>
               <div className='shopCart' style={{alignItems: 'flex-start'}}>
-                <div style={{flex: 1}} style={{fontWeight: 600}}>Title</div>
+                <Typography style={{flex: 1}} style={{fontWeight: 600}}>Title</Typography>
                 <Typography style={{fontWeight: 600}}>Count</Typography>
               </div> 
               {
                 props.user.order.map((item, i) => (
                 <div key={i} className='shopCart' style={{alignItems: 'flex-start'}}>
-                  <div style={{flex: 1}}>{item.title}</div>
+                  <Typography style={{flex: 1}}>{item.title}</Typography>
                   <Typography style={{fontSize: '16px', color: '#03a9f4'}}>{item.count}</Typography>
                 </div>
               )) 
@@ -278,14 +282,36 @@ function Main(props){
           <Typography style={{fontSize: '30px'}}>Simple Pizza App</Typography>
         </div>
         <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
-          <Popover placement='bottomRight' content={shop}>
-            <div style={{position: 'relative', display: 'flex', flexDirection: 'column'}}>
+          <div 
+            style={{
+                position: 'relative', 
+                display: 'flex', 
+                flexDirection: 'column', 
+                cursor: 'pointer'
+              }} 
+            onClick={() => shopCart.items.length > 0 ? goTo('cart') : false}
+          >
+            <Badge 
+              count={shopCart.items.length} 
+              style={{position: 'absolute', right: 20, top: -5, backgroundColor: 'rgba(255, 255, 255, 0.9)', color: 'red', fontSize: '16px', fontWeight: 600}}/>
+            <ShoppingCartOutlined style={{fontSize: '30px', color: '#808080'}}/>
+          </div>
+          {/* <Popover placement='bottomRight' content={shop} visible={true}>
+            <div 
+              style={{
+                  position: 'relative', 
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  cursor='pointer'
+                }} 
+              onClick={() => goTo('cart')}
+            >
               <Badge 
                 count={shopCart.items.length} 
                 style={{position: 'absolute', right: 20, top: -5, backgroundColor: 'rgba(255, 255, 255, 0.9)', color: 'red', fontSize: '16px', fontWeight: 600}}/>
               <ShoppingCartOutlined style={{fontSize: '30px', color: '#808080'}}/>
             </div>
-          </Popover>
+          </Popover> */}
           <Divider type='vertical'/>
           <Popover placement='bottomRight' content={popover}>
             {

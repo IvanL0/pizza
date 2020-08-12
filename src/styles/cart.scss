@@ -1,0 +1,17 @@
+@import './constants.scss';
+
+.cart{
+  @include flex(center, flex-start, column, stretch);
+  width: fit-content;
+  width: 100%;
+  margin-top: 50px;
+  .cart_body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: fit-content;
+    background-color: #fff;
+    margin-top: 20px;
+  }
+}

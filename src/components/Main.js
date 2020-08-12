@@ -190,24 +190,21 @@ function Main(props){
       >
         {
           props.user.order ?
-            Object.keys(props.user).length > 0 && isShowUserOrder ?
-              props.user.order ?
-              <>
-                <div className='shopCart' style={{alignItems: 'flex-start'}}>
-                  <div style={{flex: 1}} style={{fontWeight: 600}}>Title</div>
-                  <Typography style={{fontWeight: 600}}>Count</Typography>
-                </div> 
-                {
-                  props.user.order.map((item, i) => (
-                  <div key={i} className='shopCart' style={{alignItems: 'flex-start'}}>
-                    <div style={{flex: 1}}>{item.title}</div>
-                    <Typography style={{fontSize: '16px', color: '#03a9f4'}}>{item.count}</Typography>
-                  </div>
-                )) 
-                }
-              </> :
-              null :
-             null : <Typography>No orders</Typography>
+            <>
+              <div className='shopCart' style={{alignItems: 'flex-start'}}>
+                <div style={{flex: 1}} style={{fontWeight: 600}}>Title</div>
+                <Typography style={{fontWeight: 600}}>Count</Typography>
+              </div> 
+              {
+                props.user.order.map((item, i) => (
+                <div key={i} className='shopCart' style={{alignItems: 'flex-start'}}>
+                  <div style={{flex: 1}}>{item.title}</div>
+                  <Typography style={{fontSize: '16px', color: '#03a9f4'}}>{item.count}</Typography>
+                </div>
+              )) 
+              }
+            </> 
+          : <Typography>No orders</Typography>
         }
       </Modal>
       <Modal

@@ -18,7 +18,6 @@ export default function App(){
   return (
     <Router history={history}>
       <div style={{display: 'flex', flexDirection: 'row', width: '100%'}}>
-        {/* <Menu/> */}
         <Routes/>
       </div>
     </Router>

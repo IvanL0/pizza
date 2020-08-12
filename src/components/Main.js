@@ -252,7 +252,7 @@ function Main(props){
         <div>
           {
             isOrderCreate ?
-            <div style={{position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(255, 255, 255, 1)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10}}>
+            <div className='modalConfirm'>
               <CheckOutlined style={{fontSize: '40px', color: '#4caf50'}}/>
               <Typography>Succsesfully confirm!</Typography>
             </div> 

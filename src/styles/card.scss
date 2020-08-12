@@ -1,13 +1,10 @@
 @import './constants.scss';
 
 .card-flex{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-flow: row wrap;
+  @include flex(flex-start, flex-start, row wrap, stretch);
   width: 100%;
 }
 
 .shopCart{
-  @include flex(center, center, row, stretch)
+  @include flex(flex-start, flex-start, row, stretch)
 }

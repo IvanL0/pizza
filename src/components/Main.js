@@ -296,8 +296,8 @@ function Main(props){
           </Popover>
         </div>
       </header>
-      <Layout.Content style={{padding: '50px'}}>
-        <section className='card-flex'>
+      <Layout.Content style={{padding: '50px 10%'}}>
+        <div className='card-flex'>
           {
             pizzaCells.map((item, i) => (
               <Card 
@@ -307,13 +307,13 @@ function Main(props){
                 actions={[
                   <Button type='primary' onClick={() => props.addToCart(item)}>Order</Button>,
                 ]}
-                style={{ width: '23%', width: '240px',margin: '5px' }}
+                style={{ width: '240px', margin: '5px' }}
               >
                 <Card.Meta title={item.title} description={item.description}/>
               </Card>
             ))
           }
-        </section>
+        </div>
       </Layout.Content>
     </Layout>
   )
